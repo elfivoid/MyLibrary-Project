@@ -8,6 +8,9 @@
 
 body {
     line-height: 1.5;
+    margin: 0;
+    padding: 0;
+
 }
 
 img, picture, video, canvas, svg {
@@ -59,24 +62,46 @@ box-shadow: -15px -15px 50px 0 var(--white), 15px 15px 50px 0 rgba(13, 39, 80, 0
 }
 
 .add-btn {
-border-radius: 7px;
-background: var(--title-text);
-color: var(--white);
-text-align: center;
-font-size: 20px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-display: grid;
-place-items: center;
-width: 258px;
-height: 72px;
-padding: 26px 50px 25px 65px;
-row-gap: 10px;
-column-gap: 10px;
+  border-radius: 7px;
+  background: var(--title-text);
+  color: var(--white);
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: grid;
+  place-items: center;
+  width: 258px;
+  height: 72px;
+  padding: 26px 50px 25px 65px;
+  row-gap: 10px;
+  column-gap: 10px;
+  flex-shrink: 0;
+  grid-template-rows: repeat(1,minmax(0,1fr));
+  grid-template-columns: repeat(1,minmax(0,1fr));
+  border: none;
+  outline: none;
+}
+.close-btn {
+display: flex;
+width: 40px;
+height: 40px;
+padding: 12px 11px 11px 12px;
+align-items: flex-start;
+gap: 10px;
 flex-shrink: 0;
-grid-template-rows: repeat(1,minmax(0,1fr));
-grid-template-columns: repeat(1,minmax(0,1fr));
+border-radius: 7px;
+background: var(--title-text, #648DCF);
+color: var(--white);
+align-items: center;
+margin-left: auto;
+    border: none;
+    outline: none;
+}
+
+button:focus-visible {
+    outline: 2px solid #95b5e9; /* eigener Stil statt komplett entfernen */
 }
 
 h1 {
@@ -88,12 +113,11 @@ color: var(--title-text);
 }
 
 .book-items {
-  display: flex;
-align-items: flex-start;
-align-content: flex-start;
-gap: 70px;
+display: flex;
+justify-content: center;
+gap: 40px;
 flex-wrap: wrap;
-padding: 70px 70px;
+padding: 60px;
 }
 
 .book {
@@ -111,12 +135,12 @@ box-shadow: -15px -15px 50px 0 #FFF, 15px 15px 50px 0 rgba(13, 39, 80, 0.16);
 display: flex;
 width: 349px;
 height: 70px;
-padding: 18px 74px 19px 40px;
+padding: 18px 18px 19px 40px;
 align-items: center;
-gap: 136px;
 flex-shrink: 0;
 border-radius: 7px 7px 0 0;
 background: var(--white-blue, #CDE0FF);
+color: var(--title-text-dark);
 font-size: 22px;
 font-style: normal;
 font-weight: 600;
@@ -137,19 +161,22 @@ line-height: normal;
 .content > p {
   /* padding: 0px 42px; */
   color: var(--title-text-dark);
-
 }
 
-.close-btn {
+
+
+footer {
   display: flex;
-width: 40px;
-height: 40px;
-padding: 12px 11px 11px 12px;
-align-items: flex-start;
-gap: 10px;
-flex-shrink: 0;
-border-radius: 7px;
-background: var(--title-text, #648DCF);
-color: var(--white);
-align-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: var(--white);
+  /* Shadow-Main */
+box-shadow: -15px -15px 50px 0 var(--white), 15px 15px 50px 0 rgba(13, 39, 80, 0.16);
+}
+
+.book-header > button > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
