@@ -182,13 +182,6 @@ line-height: normal;
   display: none; 
 }
 
-#modal-backdrop {
-position: fixed; 
-inset: 0;
-background: rgba(0, 0, 0, 0.65);;
-backdrop-filter: blur(2px);
-}
-
 footer {
   display: flex;
   justify-content: center;
@@ -204,3 +197,29 @@ box-shadow: -15px -15px 50px 0 var(--white), 15px 15px 50px 0 rgba(13, 39, 80, 0
   justify-content: center;
   align-items: center;
 }
+
+/*
+-------- Overlay Modal --------
+*/
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  place-items: center;
+  z-index: 20;
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.45)
+}
+
+.modal-overlay.is-open {
+  display: grid;
+}
+
+.modal {
+  background: #FFF;
+  border-radius: 7px;
+  width: 511px;
+  height: 433px;
+}
+

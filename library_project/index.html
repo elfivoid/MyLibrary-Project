@@ -33,26 +33,39 @@
   <button type="submit">Hinzufügen</button>
   <button type="button" id="cancel-btn">Abbrechen</button>
 </form> -->
-<div id="modal-backdrop" class="hidden">
-  <div id="book-modal" class="modal hidden"></div>
-</div>
-
-
-
-       <main> 
-
-        <div class="book-items">
-            <div class="book">
-                <div class="book-header">
-                    <p>The Hobbit</p>
-                    <button class="close-btn"><img src="close_icon.svg" alt="close-icon"></button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
+<main> 
+         <div class="modal-overlay" id="modal-overlay" aria-modal="true" aria-labelledby="modal-title">
+           <div class="modal" id="modal">
+             <div class="modal-header">
+               <h2 id="modal-title">add new book</h2>
+               <button class="close-btn" id="close-btn"><img src="close_icon.svg" alt="close-icon"></button>
+             </div>
+             <div class="modal-body">
+           <div class="field">
+             <label for="title-input">Title</label>
+             <input type="text" id="title-input" />
+           </div>
+           <div class="field">
+             <label for="author-input">Author</label>
+             <input type="text" id="author-input" />
+           </div>
+           <div class="pages">
+             <label for="pages-input">Pages</label>
+             <input type="number" id="number-input" />
+           </div>
+           <div class="checkbox-row">
+             <input type="checkbox" id="read-check" />
+             <label for="read-check">Read</label>
+           </div>
+         </div>
+             <div class="modal-footer">
+           <button id="close-btn" class="close-btn">cancel</button>
+           <button id="submit-btn">add</button>
+         </div>
+             </div>
+           </div>
+         </div>
+        <div class="book-items"></div>
       </main>
       <!-- Copyright -->
        <footer>
