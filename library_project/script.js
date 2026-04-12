@@ -1,5 +1,3 @@
-
-
 // predefined book items
 const hobbit_book = new Book("The Hobbit", "J.R.R. Tolkien", 300, true);
 const alice_book = new Book("Alice in Wonderland","Lewis Carroll", 105, false);
@@ -19,15 +17,22 @@ const readCheck = document.getElementById("read-check");
 const submitBtn = document.getElementById("submit-btn");
 const addBookBtn = document.getElementById("add-book-btn");
 const bookItems = document.querySelector(".book-items"); 
+const cancelBtn = document.getElementById("cancel-btn");
+const pagesInput = document.getElementById("pages-input");
 
 
 
 submitBtn.addEventListener("click", () => {
   const title = titleInput.value.trim();
   const author = authorInput.value.trim();
+  const pages = parseInt(pagesInput.value);
   const read = readCheck.checked;
 
-  const newBook = new Book(title, author, 0, read);
+  //validation check
+  if (!title || !author || isNaN(pages) || pages < 1) {
+    return;
+  }
+  const newBook = new Book(title, author, pages, read);
   addBookToLibrary(newBook);
   closeModal();
 });
@@ -48,6 +53,7 @@ const closeModal = () => {
 
 addBookBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
+cancelBtn.addEventListener("click", closeModal);
 modalOverlay.addEventListener("click", (e) => {
   if (e.target === modalOverlay) closeModal();
 });

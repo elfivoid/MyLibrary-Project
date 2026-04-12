@@ -23,23 +23,23 @@
              <div class="modal-body">
            <div class="field">
              <label for="title-input">Title</label>
-             <input type="text" id="title-input" />
+             <input type="text" id="title-input" required/>
            </div>
            <div class="field">
              <label for="author-input">Author</label>
-             <input type="text" id="author-input" />
+             <input type="text" id="author-input" required/>
            </div>
            <div class="pages">
              <label for="pages-input">Pages</label>
-             <input type="number" id="number-input" />
+             <input type="number" id="pages-input" min="1" required/>
            </div>
            <div class="checkbox-row">
-             <input type="checkbox" id="read-check" />
+             <input type="checkbox" id="read-check" required/>
              <label for="read-check">Read</label>
            </div>
          </div>
              <div class="modal-footer">
-           <button id="close-btn" class="close-btn">cancel</button>
+           <button id="cancel-btn" class="close-btn">cancel</button>
            <button id="submit-btn">add</button>
          </div>
              </div>

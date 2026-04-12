@@ -162,6 +162,13 @@ font-weight: 600;
 line-height: normal;
 
 }
+.book-header .close-btn {
+  width: 40px;
+  height: 40px;
+  align-self: center;
+  padding: 0;
+  font-size: 14px;
+}
 
 .content {
   padding: 10px 40px;
