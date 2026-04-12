@@ -13,23 +13,38 @@
         <button class="add-btn" id="add-book-btn">Add new book</button>
      </header>
      <!-- Main -->
+      <!-- <form id="book-form" class="hidden">
+  <label>
+    Titel
+    <input type="text" name="title" required>
+  </label>
+  <label>
+    Autor
+    <input type="text" name="author" required>
+  </label>
+  <label>
+    Seiten
+    <input type="number" name="pages" min="1" required>
+  </label>
+  <label>
+    Gelesen
+    <input type="checkbox" name="read">
+  </label>
+  <button type="submit">Hinzufügen</button>
+  <button type="button" id="cancel-btn">Abbrechen</button>
+</form> -->
+<div id="modal-backdrop" class="hidden">
+  <div id="book-modal" class="modal hidden"></div>
+</div>
+
+
+
        <main> 
 
         <div class="book-items">
             <div class="book">
                 <div class="book-header">
                     <p>The Hobbit</p>
-                <button class="close-btn"><img src="close_icon.svg" alt="close-icon"></button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-           <!-- <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
                     <button class="close-btn"><img src="close_icon.svg" alt="close-icon"></button>
                 </div>
                 <div class="content">
@@ -38,209 +53,6 @@
                     <p>Read</p>
                 </div>
             </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn"><img src="close_icon.svg" alt="close-icon"></button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn"><img src="close_icon.svg" alt="close-icon"></button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn"><img src="close_icon.svg" alt="close-icon"></button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>The Hobbit</p>
-                    <button class="close-btn">
-                        <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-header">
-                    <p>Alice in Wonderland</p>
-                    <button class="close-btn">
-                            <img src="close_icon.svg" alt="close-icon">
-                    </button>
-                </div>
-                <div class="content">
-                    <p>by J. R. R. Tolkien</p>
-                    <p>300 pages</p>
-                    <p>Read</p>
-                </div>
-            </div> 
-        </div>-->
       </main>
       <!-- Copyright -->
        <footer>
