@@ -1,7 +1,6 @@
-//variables
-/* const CloseButtons = document.querySelectorAll(".close-btn"); */
 
-// create new book variables
+
+// predefined book items
 const hobbit_book = new Book("The Hobbit", "J.R.R. Tolkien", 300, true);
 const alice_book = new Book("Alice in Wonderland","Lewis Carroll", 105, false);
 
@@ -10,31 +9,25 @@ const myLibrary = [
     alice_book
 ];
 
+//variables
 const modalOverlay = document.getElementById("modal-overlay");
 const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("close-btn");
 const titleInput = document.getElementById("title-input");
 const authorInput = document.getElementById("author-input");
 const readCheck = document.getElementById("read-check");
-//const cancelBtn = document.getElementById("cancel-btn");
 const submitBtn = document.getElementById("submit-btn");
 const addBookBtn = document.getElementById("add-book-btn");
 const bookItems = document.querySelector(".book-items"); 
-/*const bookForm = document.getElementById("book-form");
-const cancelBtn = document.getElementById("cancel-btn");*/
+
 
 
 submitBtn.addEventListener("click", () => {
   const title = titleInput.value.trim();
   const author = authorInput.value.trim();
-  // const pages = Number(pagesInput.value); // Fehlt in HTML – hinzufügen?
   const read = readCheck.checked;
 
-  if (!title || !author) {
-    return; // Optional: Fehlermeldung
-  }
-
-  const newBook = new Book(title, author, 0, read); // Pages auf 0 setzen oder Input hinzufügen
+  const newBook = new Book(title, author, 0, read);
   addBookToLibrary(newBook);
   closeModal();
 });
@@ -53,18 +46,8 @@ const closeModal = () => {
   readCheck.checked = false;
 };
 
-/* addBookBtn.addEventListener("click", () => {
-  bookForm.classList.toggle("hidden");
-});
-
-cancelBtn.addEventListener("click", () => {
-  bookForm.classList.add("hidden");
-});
- */
-
 addBookBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
-//cancelBtn.addEventListener("click", closeModal);
 modalOverlay.addEventListener("click", (e) => {
   if (e.target === modalOverlay) closeModal();
 });
@@ -84,13 +67,13 @@ myLibrary.push(book);
 renderBook(book);
 }
 
-// Render Function
+// Render-Function to render books
 function renderBook(book) {
   const bookDiv = document.createElement("div");
   bookDiv.className = "book";
   bookDiv.dataset.id = book.id;
-  bookDiv.innerHTML = `
-    <div class="book-header">
+  bookDiv.innerHTML = 
+  `<div class="book-header">
       <p>${book.title}</p>
       <button class="close-btn">X</button>
     </div>
@@ -98,25 +81,14 @@ function renderBook(book) {
       <p>by ${book.author}</p>
       <p>${book.pages} pages</p>
       <p>${book.read ? "Read" : "Not read"}</p>
-    </div>
-  `;
-  
+    </div>`;
+    //create book item
   bookItems.appendChild(bookDiv);
-
   const closeBtn = bookDiv.querySelector(".close-btn");
   closeBtn.addEventListener("click", () => bookDiv.remove());
 }
 
-/* function removeBook() {
-    CloseButtons.forEach(button => {
-        button.addEventListener("click", function(event) {
-            event.target.closest(".book").remove();
-        });
-    });
-   }
-
-   removeBook();  */
-
+//render predefined books
 myLibrary.forEach(book => renderBook(book));
 
 
